@@ -9,7 +9,7 @@ class collectd::install {
     cwd     => '/opt/',
     command => "/bin/tar xfz /tmp/${collectd::params::collectd_package}",
     require => File['collectd_package'],
-    unless  => '/usr/bin/test -d /opt/collectd-5.4.0'
+    unless  => "/usr/bin/test -d ${collectd::params::collectd_bin_dir}"
   }
 
   file{ 'install_collectd_init':
