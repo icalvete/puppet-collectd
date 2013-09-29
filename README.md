@@ -6,7 +6,7 @@ Puppet manifest to install and configure collectd
 
 ##Actions:
 
-* puppet and puppet master works in Debian|Ubuntu|RedHat|CentOS
+* Works in Debian|Ubuntu|RedHat|CentOS
 * Install and configure [collectd](https://collectd.org/)
 * Output plugins:
   + [Write_Graphite](https://collectd.org/wiki/index.php/Plugin:Write_Graphite)
