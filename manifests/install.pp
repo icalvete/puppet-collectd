@@ -1,5 +1,9 @@
 class collectd::install {
 
+  file {$collectd::params::collectd_config_dir:
+    ensure => directory
+  }
+
   file {'collectd_package':
     path   => "/tmp/${collectd::params::collectd_package}",
     source => "puppet:///modules/${module_name}/${collectd::params::so}_${collectd::params::collectd_package}",
