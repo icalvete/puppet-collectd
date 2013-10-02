@@ -1,5 +1,9 @@
 class collectd::install {
 
+  if $::operatingsystem =~ /^(Debian|Ubuntu)$/ {
+    realize Package['libltdl7']
+  }
+
   file {$collectd::params::collectd_config_dir:
     ensure => directory
   }
