@@ -83,7 +83,7 @@ LoadPlugin syslog
 #LoadPlugin battery
 #LoadPlugin bind
 #LoadPlugin conntrack
-#LoadPlugin contextswitch
+LoadPlugin contextswitch
 #LoadPlugin cgroups
 LoadPlugin cpu
 #LoadPlugin cpufreq
@@ -93,14 +93,14 @@ LoadPlugin cpu
 #LoadPlugin curl_xml
 #LoadPlugin dbi
 #LoadPlugin df
-#LoadPlugin disk
+LoadPlugin disk
 #LoadPlugin dns
 #LoadPlugin email
 #LoadPlugin entropy
-#LoadPlugin ethstat
+LoadPlugin ethstat
 #LoadPlugin exec
 #LoadPlugin filecount
-#LoadPlugin fscache
+LoadPlugin fscache
 #LoadPlugin gmond
 #LoadPlugin hddtemp
 LoadPlugin interface
@@ -355,20 +355,20 @@ LoadPlugin write_graphite
 #</Plugin>
 
 #<Plugin df>
-#	Device "/dev/hda1"
-#	Device "192.168.0.2:/mnt/nfs"
-#	MountPoint "/home"
-#	FSType "ext3"
-#	IgnoreSelected false
-#	ReportByDevice false
-#	ReportReserved false
-#	ReportInodes false
+#  Device "/dev/hda1"
+#  Device "192.168.0.2:/mnt/nfs"
+#  MountPoint "/home"
+#  FSType "ext3"
+#  IgnoreSelected false
+#  ReportByDevice false
+#  ReportReserved false
+#  ReportInodes false
 #</Plugin>
 
-#<Plugin disk>
-#	Disk "/^[hs]d[a-f][0-9]?$/"
+<Plugin disk>
+	Disk "/^[hsx]v?d[a-f][0-9]?$/"
 #	IgnoreSelected false
-#</Plugin>
+</Plugin>
 
 #<Plugin dns>
 #	Interface "eth0"
@@ -383,12 +383,12 @@ LoadPlugin write_graphite
 #	MaxConns 5
 #</Plugin>
 
-#<Plugin ethstat>
-#	Interface "eth0"
-#	Map "rx_csum_offload_errors" "if_rx_errors" "checksum_offload"
-#	Map "multicast" "if_multicast"
-#	MappedOnly false
-#</Plugin>
+<Plugin ethstat>
+	Interface "eth0"
+	Map "rx_csum_offload_errors" "if_rx_errors" "checksum_offload"
+	Map "multicast" "if_multicast"
+	MappedOnly false
+</Plugin>
 
 #<Plugin exec>
 #	Exec "user:group" "/path/to/exec"
@@ -425,10 +425,10 @@ LoadPlugin write_graphite
 #  Port "7634"
 #</Plugin>
 
-#<Plugin interface>
-#	Interface "eth0"
-#	IgnoreSelected false
-#</Plugin>
+<Plugin interface>
+	Interface "eth0"
+	IgnoreSelected false
+</Plugin>
 
 #<Plugin ipmi>
 #	Sensor "some_sensor"
