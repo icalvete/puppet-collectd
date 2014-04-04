@@ -20,10 +20,11 @@ Puppet manifest to install and configure collectd
 
 Write_Graphite is default output, for amqp...
 
-    class {'collectd':
-      amqp_enabled => true
-    }
-
+```puppet
+class {'collectd':
+  amqp_enabled => true
+}
+```
 
 ##Authors:
 
